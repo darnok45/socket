@@ -1,11 +1,18 @@
-const express = require('express')
+import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
 
-const app = express()
+const app = express();
+const port = 3000;
+const server = http.createServer(app);
+const io = new Server(server)
 
-const http = require('http').Server(app)
+app.use(express.static('public'));
 
-const io =  require('socket.io')(http)
+io.on('connection', (socket) => {
+    console.log("Usuario conectado")
+})
 
-Server.listen(8080, function(){
-    console.log('servidor corriendo en http://localhost:8080')
+server.listen(port, () => {
+  console.log(`Servidor corriendo en el puerto: ${port}`);
 })

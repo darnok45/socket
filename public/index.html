@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../src/public/style.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="index.js"></script>
-    
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
    <div class="container">
         <div class="left-window">
             <div class="new-turn">
-                <button>Nuevo turno</button>
+                <button onclick="newTurn()">Nuevo turno</button>
             </div>
             <div class="actual-turn">
                 <h1>Turno actual:</h1>
@@ -40,5 +37,8 @@
             </table>
         </div>
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
