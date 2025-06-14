@@ -10,35 +10,26 @@
    <div class="container">
         <div class="left-window">
             <div class="new-turn">
-                <button onclick="newTurn()">Nuevo turno</button>
+                <button>Nuevo turno</button>
             </div>
             <div class="actual-turn">
                 <h1>Turno actual:</h1>
                 <h2>N° 1</h2>
             </div>
+
+            <div class="call-turn">
+                <button class="margin-button">Llamar al siguiente</button>
+            </div>
         </div>
 
         <div class="right-window">
-            <table>
-                <tr>
-                    <th>Turno:</th>
-                </tr>
-                <tr>
-                    <td>Tiempo de espera:</td>
-                </tr>
-            </table>
-                        <table>
-                <tr>
-                    <th>Turno:</th>
-                </tr>
-                <tr>
-                    <td>Tiempo de espera:</td>
-                </tr>
-            </table>
+
         </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
+
+    <audio id="sonido" src="sonido.mp3"></audio>
 </body>
 </html>

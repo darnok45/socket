@@ -9,9 +9,20 @@ const io = new Server(server)
 
 app.use(express.static('public'));
 
+let turnoActual = 0;
+
 io.on('connection', (socket) => {
-    console.log("Usuario conectado")
-})
+  console.log("Usuario conectado");
+
+  socket.on('newTurn', () => {
+    turnoActual++;
+    const turn = {
+      numero: turnoActual,
+      timestamp: Date.now()
+    };
+    io.emit('newTurnEmitted', turn);
+  });
+});
 
 server.listen(port, () => {
   console.log(`Servidor corriendo en el puerto: ${port}`);
